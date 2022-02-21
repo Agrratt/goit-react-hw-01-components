@@ -1,5 +1,7 @@
 import Profile from './components/Profile/Profile';
 import user from './components/Profile/user.json';
+import data from './components/Statistics/data.json';
+import Statistics from './components/Statistics/Statistics';
 
 export const App = () => {
   return (
@@ -9,9 +11,11 @@ export const App = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'column',
         fontSize: 40,
         textTransform: 'uppercase',
         color: '#010101',
+        marginTop: '100px',
       }}
     >
       <Profile
@@ -22,6 +26,13 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
+
+      <Statistics
+        // key={data.id}
+        title="Upload stats"
+        stats={data}
+      />
+      {/* <Statistics stats={data} /> */}
     </div>
   );
 };
