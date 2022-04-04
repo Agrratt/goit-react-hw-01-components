@@ -1,26 +1,28 @@
-import s from './Statistics.module.css';
+import {
+  Card,
+  Title,
+  StatisticsList,
+  Item,
+  Label,
+  Percentage,
+} from 'components/Statistics/Statistics.styled';
 import PropTypes from 'prop-types';
 import getRandomColor from './getRandomColor';
-// import data from './data.json';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className={s.statistics}>
-      <div>{title && <h2 className={s.title}>{title}</h2>}</div>
+    <Card>
+      <div>{title && <Title>{title}</Title>}</div>
 
-      <ul className={s.list}>
+      <StatisticsList>
         {stats.map(({ id, label, percentage }) => (
-          <li
-            className={s.item}
-            key={id}
-            style={{ backgroundColor: getRandomColor() }}
-          >
-            <span className={s.label}>{label}</span>
-            <span className={s.percentage}>{percentage}%</span>
-          </li>
+          <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
+          </Item>
         ))}
-      </ul>
-    </section>
+      </StatisticsList>
+    </Card>
   );
 };
 
