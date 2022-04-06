@@ -1,4 +1,3 @@
-// import user from 'Profile/user';
 import PropTypes from 'prop-types';
 import {
   Card,
@@ -13,7 +12,15 @@ import {
   Quantity,
 } from 'components/Profile/Profile.styled';
 
-const Profile = ({ username, tag, location, avatar, stats }) => {
+const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  followers,
+  views,
+  likes,
+}) => {
   return (
     <Card>
       <Description>
@@ -26,15 +33,15 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
       <StatsList>
         <StatsItem>
           <Marker>Followers</Marker>
-          <Quantity>{stats.followers}</Quantity>
+          <Quantity>{followers}</Quantity>
         </StatsItem>
         <StatsItem>
           <Marker>Views</Marker>
-          <Quantity>{stats.views}</Quantity>
+          <Quantity>{views}</Quantity>
         </StatsItem>
         <StatsItem>
           <Marker>Likes</Marker>
-          <Quantity>{stats.likes}</Quantity>
+          <Quantity>{likes}</Quantity>
         </StatsItem>
       </StatsList>
     </Card>
@@ -46,11 +53,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
-  }),
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };
 
 export default Profile;
