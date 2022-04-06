@@ -6,7 +6,7 @@ const TransactionHistory = ({ items }) => {
         <Card className="transaction-history">
             <TableHeader>
                 <tr>
-                <th>Type</th>``
+                <th>Type</th>
                 <th>Amount</th>
                 <th>Currency</th>
                 </tr>
